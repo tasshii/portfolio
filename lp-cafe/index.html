@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>珈琲 灯り｜自家焙煎と手しごとの喫茶店</title>
+  <meta name="description" content="路地裏の小さな自家焙煎珈琲店「珈琲 灯り」。一杯ずつ丁寧に淹れるハンドドリップと、季節の手づくり焼き菓子をご用意しています。">
+  <meta property="og:title" content="珈琲 灯り｜自家焙煎と手しごとの喫茶店">
+  <meta property="og:description" content="一杯ずつ丁寧に淹れるハンドドリップと、季節の焼き菓子。">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z' fill='%23a85d20'/%3E%3Crect x='11' y='22' width='10' height='7' rx='2' fill='%234a3326'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="header" id="top">
+    <div class="header__inner">
+      <a href="#top" class="logo" aria-label="珈琲 灯り トップへ">
+        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z" fill="currentColor"/><rect x="11" y="22" width="10" height="7" rx="2" fill="currentColor" opacity=".55"/></svg>
+        <span>珈琲 灯り</span>
+      </a>
+      <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="#concept">コンセプト</a></li>
+          <li><a href="#menu">メニュー</a></li>
+          <li><a href="#news">お知らせ</a></li>
+          <li><a href="#access">アクセス</a></li>
+          <li><a href="#reserve" class="nav__cta">ご予約</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ファーストビュー -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <svg viewBox="0 0 400 400" class="hero__steam"><path d="M180 330c-30-40 30-70 0-120s30-80 0-130" /><path d="M220 330c-30-40 30-70 0-120s30-80 0-130" /></svg>
+      </div>
+      <div class="hero__inner">
+        <p class="hero__sub fade">自家焙煎珈琲と焼き菓子</p>
+        <h1 class="hero__title fade">一杯の、<br>ちいさな灯りを。</h1>
+        <p class="hero__lead fade">路地裏の小さな喫茶店で、<br class="sp">ゆっくり流れる時間をどうぞ。</p>
+        <div class="hero__btns fade">
+          <a href="#reserve" class="btn btn--primary">席を予約する</a>
+          <a href="#menu" class="btn btn--ghost">メニューを見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- コンセプト -->
+    <section class="section concept" id="concept">
+      <div class="container concept__grid">
+        <div class="concept__visual fade" aria-hidden="true">
+          <svg viewBox="0 0 300 300">
+            <circle cx="150" cy="150" r="140" fill="var(--c-cream-dark)"/>
+            <ellipse cx="150" cy="215" rx="95" ry="16" fill="var(--c-brown)" opacity=".18"/>
+            <path d="M85 120h130v55a55 55 0 0 1-55 55h-20a55 55 0 0 1-55-55z" fill="var(--c-white)" stroke="var(--c-brown)" stroke-width="4"/>
+            <path d="M215 135h12a22 22 0 0 1 0 44h-14" fill="none" stroke="var(--c-brown)" stroke-width="4"/>
+            <ellipse cx="150" cy="122" rx="62" ry="9" fill="var(--c-brown)"/>
+            <path class="steam" d="M130 100c-10-14 10-22 0-38M150 100c-10-14 10-22 0-38M170 100c-10-14 10-22 0-38" fill="none" stroke="var(--c-brown)" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+          </svg>
+        </div>
+        <div class="concept__text">
+          <p class="section__en fade">Concept</p>
+          <h2 class="section__title fade">急がない珈琲を、<br>急がない場所で。</h2>
+          <p class="fade">産地から選んだ生豆を、店内の小さな焙煎機で毎週焼いています。豆の個性がいちばん素直に出る深さを探して、一杯ずつハンドドリップでお淹れします。</p>
+          <p class="fade">席数はカウンターとテーブルあわせて12席。本を読む方、窓の外を眺める方、思い思いに過ごしていただける静かな空間を大切にしています。</p>
+          <ul class="features fade">
+            <li><strong>毎週焙煎</strong><span>鮮度にこだわり、焼きたての豆だけを使用</span></li>
+            <li><strong>手づくり菓子</strong><span>季節の果物を使った焼き菓子を毎朝焼き上げ</span></li>
+            <li><strong>豆の販売</strong><span>お店の味をご自宅でも。100gから量り売り</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- メニュー -->
+    <section class="section menu" id="menu">
+      <div class="container">
+        <p class="section__en fade">Menu</p>
+        <h2 class="section__title fade">お品書き</h2>
+        <div class="tabs fade" role="tablist" aria-label="メニューの種類">
+          <button class="tab is-active" role="tab" aria-selected="true" aria-controls="panel-coffee" id="tab-coffee">珈琲</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel-sweets" id="tab-sweets" tabindex="-1">焼き菓子</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel-other" id="tab-other" tabindex="-1">その他</button>
+        </div>
+
+        <div class="menu__panel is-active" id="panel-coffee" role="tabpanel" aria-labelledby="tab-coffee">
+          <ul class="menu__list">
+            <li><div><h3>灯りブレンド</h3><p>深煎り。ビターチョコのようなコクと甘い余韻</p></div><span class="price">¥600</span></li>
+            <li><div><h3>朝霧ブレンド</h3><p>中煎り。柑橘の香りとすっきりした後味</p></div><span class="price">¥600</span></li>
+            <li><div><h3>エチオピア シングルオリジン</h3><p>浅煎り。ベリーと紅茶のような華やかさ</p></div><span class="price">¥700</span></li>
+            <li><div><h3>カフェオレ</h3><p>深煎りの珈琲とたっぷりのミルク</p></div><span class="price">¥650</span></li>
+            <li><div><h3>水出しアイス珈琲</h3><p>8時間かけて抽出。まろやかな口当たり</p></div><span class="price">¥650</span></li>
+          </ul>
+        </div>
+        <div class="menu__panel" id="panel-sweets" role="tabpanel" aria-labelledby="tab-sweets" hidden>
+          <ul class="menu__list">
+            <li><div><h3>季節のタルト</h3><p>今月は和梨とカスタード</p></div><span class="price">¥580</span></li>
+            <li><div><h3>ほうじ茶のバスクチーズケーキ</h3><p>香ばしさと濃厚なチーズの組み合わせ</p></div><span class="price">¥550</span></li>
+            <li><div><h3>くるみのスコーン</h3><p>自家製ジャムとクロテッドクリーム付き</p></div><span class="price">¥480</span></li>
+            <li><div><h3>本日の焼き菓子</h3><p>カウンターのガラスケースからお選びください</p></div><span class="price">¥300〜</span></li>
+          </ul>
+        </div>
+        <div class="menu__panel" id="panel-other" role="tabpanel" aria-labelledby="tab-other" hidden>
+          <ul class="menu__list">
+            <li><div><h3>和紅茶</h3><p>静岡県産。渋みが少なくやさしい甘み</p></div><span class="price">¥600</span></li>
+            <li><div><h3>自家製レモネード</h3><p>国産レモンを蜂蜜で漬け込みました</p></div><span class="price">¥600</span></li>
+            <li><div><h3>ケーキセット</h3><p>お好きなドリンクと焼き菓子を組み合わせると、合計から¥150引き</p></div><span class="price">セット割</span></li>
+          </ul>
+        </div>
+        <p class="note fade">※価格はすべて税込です。豆の量り売りは店頭にてご確認ください。</p>
+      </div>
+    </section>
+
+    <!-- お知らせ -->
+    <section class="section news" id="news">
+      <div class="container">
+        <p class="section__en fade">News</p>
+        <h2 class="section__title fade">お知らせ</h2>
+        <ul class="news__list fade">
+          <li><time datetime="2026-11-01">2026.11.01</time><span class="tag">新メニュー</span><p>季節のタルトが「和梨とカスタード」に変わりました。</p></li>
+          <li><time datetime="2026-10-20">2026.10.20</time><span class="tag tag--info">営業日</span><p>11月の定休日は毎週水曜日と、第3火曜日です。</p></li>
+          <li><time datetime="2026-10-05">2026.10.05</time><span class="tag tag--event">イベント</span><p>月に一度の「はじめてのハンドドリップ教室」参加者を募集中です。</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- アクセス -->
+    <section class="section access" id="access">
+      <div class="container access__grid">
+        <div>
+          <p class="section__en fade">Access</p>
+          <h2 class="section__title fade">店舗情報</h2>
+          <dl class="info fade">
+            <div><dt>住所</dt><dd>〒000-0000 東京都○○区△△町1-2-3</dd></div>
+            <div><dt>営業時間</dt><dd>9:00〜18:00（L.O. 17:30）</dd></div>
+            <div><dt>定休日</dt><dd>水曜日・第3火曜日</dd></div>
+            <div><dt>席数</dt><dd>12席（全席禁煙）</dd></div>
+            <div><dt>電話</dt><dd>00-0000-0000</dd></div>
+          </dl>
+        </div>
+        <div class="map fade">
+          <svg viewBox="0 0 400 300" role="img" aria-label="店舗の場所を示す仮の地図">
+            <rect width="400" height="300" fill="var(--c-cream-dark)"/>
+            <path d="M0 200h400M120 0v300M300 0v300M0 80h400" stroke="var(--c-white)" stroke-width="14"/>
+            <circle cx="210" cy="140" r="10" fill="var(--c-accent)"/>
+            <path d="M210 108a22 22 0 0 1 22 22c0 16-22 38-22 38s-22-22-22-38a22 22 0 0 1 22-22z" fill="var(--c-accent)"/>
+            <circle cx="210" cy="130" r="8" fill="var(--c-white)"/>
+          </svg>
+          <p>※サンプルサイトのため地図は仮の表示です</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 予約フォーム -->
+    <section class="section reserve" id="reserve">
+      <div class="container container--narrow">
+        <p class="section__en fade">Reservation</p>
+        <h2 class="section__title fade">席のご予約</h2>
+        <p class="reserve__lead fade">ご来店の前日までにお送りください。内容を確認し、メールでご返信いたします。</p>
+        <form class="form fade" id="reserveForm" novalidate>
+          <div class="form__row">
+            <label for="name">お名前<span class="req">必須</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+            <p class="form__error" aria-live="polite"></p>
+          </div>
+          <div class="form__row">
+            <label for="email">メールアドレス<span class="req">必須</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+            <p class="form__error" aria-live="polite"></p>
+          </div>
+          <div class="form__cols">
+            <div class="form__row">
+              <label for="date">ご来店日<span class="req">必須</span></label>
+              <input type="date" id="date" name="date" required>
+              <p class="form__error" aria-live="polite"></p>
+            </div>
+            <div class="form__row">
+              <label for="time">時間<span class="req">必須</span></label>
+              <select id="time" name="time" required>
+                <option value="">選択</option>
+                <option>9:00</option><option>10:00</option><option>11:00</option><option>12:00</option>
+                <option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option>
+              </select>
+              <p class="form__error" aria-live="polite"></p>
+            </div>
+            <div class="form__row">
+              <label for="people">人数<span class="req">必須</span></label>
+              <select id="people" name="people" required>
+                <option value="">選択</option>
+                <option>1名</option><option>2名</option><option>3名</option><option>4名</option>
+              </select>
+              <p class="form__error" aria-live="polite"></p>
+            </div>
+          </div>
+          <div class="form__row">
+            <label for="message">ご要望など</label>
+            <textarea id="message" name="message" rows="4" placeholder="例）窓際の席を希望します"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">この内容で予約を送信</button>
+          <p class="form__done" id="formDone" role="status" hidden>送信ありがとうございました（サンプルのため実際には送信されません）。</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__logo">珈琲 灯り</p>
+    <p class="footer__note">このサイトはポートフォリオ用の架空の店舗サイトです。</p>
+    <small>&copy; 2026 Coffee Akari (sample)</small>
+  </footer>
+
+  <a href="#top" class="to-top" aria-label="ページの先頭へ戻る"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+  <script src="script.js"></script>
+</body>
+</html>

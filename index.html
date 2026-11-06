@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>制作実績｜Web制作・業務自動化</title>
+  <meta name="description" content="Webサイト・LP制作と、Googleスプレッドシート／GASによる業務自動化の制作実績です。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f7f9; --card: #fff; --text: #1f2933; --muted: #52606d;
+      --line: #e4e7eb; --accent: #2457c5; --accent-bg: #e8effc;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: "Noto Sans JP", sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+    a { color: var(--accent); }
+    .wrap { width: min(960px, 100% - 32px); margin-inline: auto; }
+    header { background: var(--card); border-bottom: 1px solid var(--line); padding: 56px 0 40px; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin: 0 0 8px; }
+    .lead { color: var(--muted); margin: 0; }
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 0; padding: 0; list-style: none; }
+    .skills li { background: var(--accent-bg); color: var(--accent); font-size: .85rem; font-weight: 500; padding: 2px 12px; border-radius: 999px; }
+    main { padding: 48px 0 64px; display: grid; gap: 32px; }
+    h2 { font-size: 1.3rem; margin: 0 0 4px; }
+    .work { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: grid; grid-template-columns: 1fr 1.2fr; }
+    .work__thumb { background: #2a1b12; min-height: 240px; position: relative; }
+    .work__thumb iframe { position: absolute; top: 0; left: 0; width: 250%; height: 250%; transform: scale(.4); transform-origin: 0 0; border: 0; pointer-events: none; }
+    .work__thumb--gas { background: linear-gradient(135deg, #0f9d58, #137a46); display: grid; place-items: center; color: #fff; padding: 24px; }
+    .sheet { background: #fff; color: #333; border-radius: 6px; font-size: .72rem; width: 100%; max-width: 300px; box-shadow: 0 8px 24px rgba(0,0,0,.2); overflow: hidden; }
+    .sheet div { display: grid; grid-template-columns: 1.2fr 2fr 1fr; border-bottom: 1px solid #eee; }
+    .sheet span { padding: 4px 6px; border-right: 1px solid #eee; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sheet div:first-child { background: #4a3326; color: #fff; font-weight: 700; }
+    .work__body { padding: 28px; }
+    .tag { font-size: .8rem; color: var(--muted); margin: 0 0 12px; }
+    .work ul { padding-left: 1.2em; margin: 12px 0; }
+    .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+    .btn { display: inline-block; padding: 8px 20px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: .9rem; }
+    .btn--primary { background: var(--accent); color: #fff; }
+    .btn--ghost { border: 1px solid var(--accent); }
+    .flow { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 28px; }
+    .flow ol { margin: 12px 0 0; padding-left: 1.4em; }
+    footer { text-align: center; color: var(--muted); font-size: .8rem; padding: 24px 0 40px; }
+    @media (max-width: 720px) {
+      .work { grid-template-columns: 1fr; }
+      .work__body { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>制作実績</h1>
+      <p class="lead">Webサイト・LP制作と、Googleスプレッドシート／GASによる業務の自動化をお手伝いしています。<br>「毎月の手作業を減らしたい」「小さなお店のホームページがほしい」といったご相談に対応します。</p>
+      <ul class="skills">
+        <li>HTML / CSS / JavaScript</li><li>レスポンシブ対応</li><li>Google Apps Script</li>
+        <li>スプレッドシート関数</li><li>PDF・帳票の自動作成</li><li>AIを活用した効率的な制作</li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article class="work">
+      <div class="work__thumb" aria-hidden="true">
+        <iframe src="lp-cafe/" title="カフェLPのプレビュー" loading="lazy" tabindex="-1"></iframe>
+      </div>
+      <div class="work__body">
+        <h2>カフェのランディングページ</h2>
+        <p class="tag">Web制作 ／ サンプル作品（架空の店舗）</p>
+        <p>自家焙煎珈琲店を想定した1ページ完結のサイトです。お店の雰囲気が伝わるデザインと、予約につながる導線を意識しました。</p>
+        <ul>
+          <li>スマホ・PCどちらでも見やすいレスポンシブデザイン</li>
+          <li>メニューのタブ切り替え、スクロールに合わせた演出</li>
+          <li>定休日・過去の日付をはじく入力チェック付き予約フォーム</li>
+          <li>読み上げソフトやキーボード操作にも配慮（アクセシビリティ対応）</li>
+        </ul>
+        <div class="links">
+          <a class="btn btn--primary" href="lp-cafe/">サイトを見る</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="work__thumb work__thumb--gas" aria-hidden="true">
+        <div class="sheet">
+          <div><span>請求番号</span><span>取引先名</span><span>状態</span></div>
+          <div><span>INV-001</span><span>株式会社サンプル商事</span><span>発行済み</span></div>
+          <div><span>INV-002</span><span>合同会社テスト食品</span><span>発行済み</span></div>
+          <div><span>INV-003</span><span>〇〇工務店</span><span></span></div>
+        </div>
+      </div>
+      <div class="work__body">
+        <h2>請求書PDF 自動作成ツール</h2>
+        <p class="tag">業務自動化 ／ Googleスプレッドシート + GAS</p>
+        <p>スプレッドシートに明細を入力し、メニューを押すだけで請求書PDFを作成してGoogleドライブに保存します。毎月の請求業務を数分に短縮できます。</p>
+        <ul>
+          <li>請求番号ごとに明細をまとめて1枚の請求書に</li>
+          <li>インボイス制度に対応（登録番号、税率ごとの消費税）</li>
+          <li>作成済みの行に「発行済み」とPDFのリンクを自動で記入し、二重発行を防止</li>
+          <li>メールの下書き作成・毎月の自動実行などにも拡張できます</li>
+        </ul>
+        <div class="links">
+          <a class="btn btn--ghost" href="https://github.com/tasshii/portfolio/blob/main/gas-invoice/Code.gs">ソースコードを見る</a>
+          <a class="btn btn--ghost" href="https://github.com/tasshii/portfolio/tree/main/gas-invoice">導入手順を見る</a>
+        </div>
+      </div>
+    </article>
+
+    <section class="flow">
+      <h2>ご依頼の流れ</h2>
+      <ol>
+        <li>メッセージで、作りたいもの・お困りごとをお聞かせください</li>
+        <li>内容を確認し、お見積もりと納期をご提案します</li>
+        <li>制作中も途中経過をお見せしながら進めます</li>
+        <li>納品後の簡単な修正にも対応します</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>掲載作品はポートフォリオ用のサンプルで、店舗名・会社名はすべて架空のものです。</footer>
+</body>
+</html>

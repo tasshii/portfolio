@@ -6,6 +6,8 @@
  * （登録番号・税率ごとの合計と消費税額）に対応しています。
  *
  * 使い方：メニュー「請求書」→「① 初期設定（サンプル作成）」→「② 未発行の請求書を作成」
+ * メニューが出ない場合：Apps Script の画面上部で関数「setup」や「createPendingInvoices」を
+ * 選んで「実行」しても同じ処理ができます（結果は画面下の実行ログに表示されます）。
  */
 
 const SHEET = {
@@ -35,8 +37,9 @@ const TEMPLATE_ITEM_ROWS = 10;  // 1枚に載せられる明細の行数
 
 /** スプレッドシートを開いたときにメニューを追加 */
 function onOpen() {
-  SpreadsheetApp.getUi()
-    .createMenu('請求書')
+  const ui = getUi_();
+  if (!ui) return;
+  ui.createMenu('請求書')
     .addItem('① 初期設定（サンプル作成）', 'setup')
     .addSeparator()
     .addItem('② 未発行の請求書を作成', 'createPendingInvoices')
@@ -46,20 +49,23 @@ function onOpen() {
 
 /* =========================================================
  * 初期設定：シートとサンプルデータを作る
+ * （メニューからでも、Apps Script のエディタから「実行」しても動く）
  * ======================================================= */
 function setup() {
   const ss = SpreadsheetApp.getActive();
-  const ui = SpreadsheetApp.getUi();
+  const ui = getUi_();
   if (ss.getSheetByName(SHEET.ITEMS)) {
-    const res = ui.alert('すでに「明細」シートがあります。設定とテンプレートだけ作り直しますか？（明細は消えません）', ui.ButtonSet.OK_CANCEL);
-    if (res !== ui.Button.OK) return;
+    if (ui) {
+      const res = ui.alert('すでに「明細」シートがあります。設定とテンプレートだけ作り直しますか？（明細は消えません）', ui.ButtonSet.OK_CANCEL);
+      if (res !== ui.Button.OK) return;
+    }
   } else {
     createItemsSheet_(ss);
   }
   createSettingsSheet_(ss);
   createTemplateSheet_(ss);
   ss.setActiveSheet(ss.getSheetByName(SHEET.ITEMS));
-  ui.alert('初期設定が完了しました。\n「設定」シートに自社情報を入力してから、②を実行してください。');
+  alert_('初期設定が完了しました。\n「設定」シートに自社情報を入力してから、②を実行してください。');
 }
 
 function createItemsSheet_(ss) {
@@ -160,11 +166,11 @@ function createTemplateSheet_(ss) {
 function createPendingInvoices() {
   const groups = groupItems_().filter((g) => g.rows.some((r) => r.values[COL.STATUS - 1] !== STATUS_DONE));
   if (!groups.length) {
-    SpreadsheetApp.getUi().alert('未発行の請求書はありません。');
+    alert_('未発行の請求書はありません。');
     return;
   }
   const done = groups.map(createInvoice_);
-  SpreadsheetApp.getUi().alert(`${done.length}件の請求書を作成しました。\n\n${done.join('\n')}`);
+  alert_(`${done.length}件の請求書を作成しました。\n\n${done.join('\n')}`);
 }
 
 /** 選択中のセルがある行の請求番号を作成（再発行にも使える） */
@@ -289,6 +295,29 @@ function exportSheetAsPdf_(ss, sheet, fileName, folderId) {
 /* =========================================================
  * ユーティリティ
  * ======================================================= */
+
+/** メニューから実行したときは画面のUI、エディタから実行したときは null */
+function getUi_() {
+  try {
+    return SpreadsheetApp.getUi();
+  } catch (e) {
+    return null;
+  }
+}
+
+/** 画面にメッセージを出す（エディタから実行したときは実行ログに出す） */
+function alert_(message) {
+  const ui = getUi_();
+  if (ui) {
+    try {
+      ui.alert(message);
+      return;
+    } catch (e) {
+      // エディタ実行時は alert が使えないため、ログに出す
+    }
+  }
+  console.log(message);
+}
 function readSettings_() {
   const sh = SpreadsheetApp.getActive().getSheetByName(SHEET.SETTINGS);
   if (!sh || sh.getLastRow() < 2) return {};

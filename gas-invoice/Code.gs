@@ -53,15 +53,8 @@ function onOpen() {
  * ======================================================= */
 function setup() {
   const ss = SpreadsheetApp.getActive();
-  const ui = getUi_();
-  if (ss.getSheetByName(SHEET.ITEMS)) {
-    if (ui) {
-      const res = ui.alert('すでに「明細」シートがあります。設定とテンプレートだけ作り直しますか？（明細は消えません）', ui.ButtonSet.OK_CANCEL);
-      if (res !== ui.Button.OK) return;
-    }
-  } else {
-    createItemsSheet_(ss);
-  }
+  // 「明細」シートがすでにあるときは消さずに残し、設定とテンプレートだけ作り直す
+  if (!ss.getSheetByName(SHEET.ITEMS)) createItemsSheet_(ss);
   createSettingsSheet_(ss);
   createTemplateSheet_(ss);
   ss.setActiveSheet(ss.getSheetByName(SHEET.ITEMS));
@@ -189,7 +182,7 @@ function createSelectedInvoice() {
     ui.alert('請求番号が入った行を選択してください。');
     return;
   }
-  ui.alert(`請求書を作成しました。\n\n${createInvoice_(group)}`);
+  alert_(`請求書を作成しました。\n\n${createInvoice_(group)}`);
 }
 
 /** 明細を請求番号ごとにまとめる */
@@ -305,18 +298,19 @@ function getUi_() {
   }
 }
 
-/** 画面にメッセージを出す（エディタから実行したときは実行ログに出す） */
+/**
+ * 完了メッセージを出す。
+ * 実行ログに書き、スプレッドシートの右下にも数秒間表示する。
+ * （ボタンを押すまで待つ ui.alert は、エディタから実行すると
+ *   シート側で応答待ちになり時間切れになるため使わない）
+ */
 function alert_(message) {
-  const ui = getUi_();
-  if (ui) {
-    try {
-      ui.alert(message);
-      return;
-    } catch (e) {
-      // エディタ実行時は alert が使えないため、ログに出す
-    }
-  }
   console.log(message);
+  try {
+    SpreadsheetApp.getActive().toast(message, '請求書ツール', 10);
+  } catch (e) {
+    // 表示できない環境ではログだけ
+  }
 }
 function readSettings_() {
   const sh = SpreadsheetApp.getActive().getSheetByName(SHEET.SETTINGS);
